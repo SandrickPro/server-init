@@ -1,0 +1,57 @@
+# Platform v14.0 - Python Dependencies
+
+# Core dependencies
+asyncio-mqtt==0.16.1
+hvac==2.1.0
+mlflow==2.9.2
+prometheus-client==0.19.0
+psutil==5.9.6
+
+# Web frameworks
+flask==3.0.0
+fastapi==0.108.0
+uvicorn==0.25.0
+strawberry-graphql==0.217.1
+
+# Data processing
+pandas==2.1.4
+numpy==1.26.2
+scikit-learn==1.3.2
+joblib==1.3.2
+
+# Kubernetes & Cloud
+kubernetes==28.1.0
+boto3==1.34.0
+google-cloud-storage==2.14.0
+
+# Observability
+opentelemetry-api==1.22.0
+opentelemetry-sdk==1.22.0
+opentelemetry-instrumentation==0.43b0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+
+# CLI & Utils
+click==8.1.7
+pyyaml==6.0.1
+requests==2.31.0
+aiohttp==3.9.1
+
+# Message queues
+aiokafka==0.10.0
+aio-pika==9.3.1
+
+# Database
+asyncpg==0.29.0
+aiosqlite==0.19.0
+redis==5.0.1
+
+# Security
+cryptography==41.0.7
+pyjwt==2.8.0
+
+# Monitoring
+grafana-client==3.5.0
