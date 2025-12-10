@@ -1,0 +1,56 @@
+{
+  "name": "devops-dashboard",
+  "version": "11.0.0",
+  "description": "Modern DevOps Platform Dashboard",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write src/**/*.{ts,tsx,css}"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0",
+    "@mui/material": "^5.14.18",
+    "@mui/icons-material": "^5.14.18",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "axios": "^1.6.2",
+    "chart.js": "^4.4.0",
+    "react-chartjs-2": "^5.2.0",
+    "recharts": "^2.10.3",
+    "date-fns": "^2.30.0",
+    "socket.io-client": "^4.5.4",
+    "react-query": "^3.39.3",
+    "zustand": "^4.4.7",
+    "react-hot-toast": "^2.4.1",
+    "framer-motion": "^10.16.15",
+    "react-terminal": "^1.2.0",
+    "@monaco-editor/react": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.2",
+    "react-scripts": "^5.0.1",
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

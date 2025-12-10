@@ -1,0 +1,26 @@
+# nginx_site.conf.template
+# Template created for reference. The install script writes a concrete config to /etc/nginx/sites-available/<domain>.
+server {
+    listen 80;
+    listen [::]:80;
+    server_name {{DOMAIN}};
+
+    root /var/www/{{DOMAIN}}/html;
+    index index.html;
+
+    location = /login {
+        try_files /index.html =404;
+    }
+
+    location = /auth {
+        return 302 /unauthorized.html;
+    }
+
+    location = /unauthorized.html {
+        try_files /unauthorized.html =404;
+    }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

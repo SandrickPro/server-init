@@ -1,0 +1,35 @@
+[Unit]
+# SSH Session Tracking Service Template
+# Описание: Systemd template unit для отслеживания начала/конца SSH-сессий
+# Использование: systemctl start ssh-session@<SID>.service
+# Пример: systemctl start ssh-session@192.168.1.100_john_20241208_143052.service
+
+Description=SSH Session Tracking for %i
+Documentation=file:///srv/sys/ssh/README_SID.md
+After=network.target sshd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+# Переменные окружения
+Environment="SESSION_DIR=/srv/sys/ssh/ssh_session"
+Environment="LOG_FILE=/var/log/ssh-sessions.log"
+
+# Начало сессии - логируем старт
+ExecStart=/srv/sys/ssh/log_session_start.sh %i
+
+# Конец сессии - логируем завершение
+ExecStop=/srv/sys/ssh/log_session_end.sh %i
+
+# Перезапуск при падении
+Restart=no
+
+# Таймаут для операций
+TimeoutStartSec=10s
+TimeoutStopSec=10s
+
+[Install]
+# Не устанавливаем автозапуск - сервис должен запускаться вручную
+# или через PAM hooks при SSH-подключении
+WantedBy=multi-user.target
